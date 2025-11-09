@@ -2,32 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asa King - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to My Portfolio</h1>
-    <p id="message">Hi, I'm Asa King! Another test.I'm a passionate developer, designer, and lifelong learner.</p>
+    <div class="header-content">
+      <h1>Asa King</h1>
+      <p class="header-subtitle">Biomedical Engineering Technology Student</p>
+      <p id="message">Passionate developer, designer, and lifelong learner</p>
+    </div>
   </header>
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+  <nav class="site-nav">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <div id="nav-links" class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Skills</a>
+      <a href="#gallery">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>
-        I'm Asa King a software developer based in Newark, New Jersey. I am a student at New Jersey Institute of Technology currently pursuing a Bachelor of Biomedical Engineering Technology.
-        I graduated Bard High School Early College and attained an Associate of Arts degree.
-      </p>
-      <p>
-        I enjoy exploring new technologies, building user-friendly applications, and collaborating with diverse teams to solve real-world problems.
-      </p>
+      <div class="about-content">
+        <p>
+          I'm <strong>Asa Brandon Kenneth King</strong>, an aspiring engineer based in Newark, New Jersey. I am a student at <strong>New Jersey Institute of Technology</strong> currently pursuing a Bachelor of Biomedical Engineering Technology.
+          I graduated <strong>Bard High School Early College</strong> and attained an Associate of Arts degree.
+        </p>
+        <p>
+          I enjoy exploring new technologies, building user-friendly applications, and collaborating with diverse teams to solve real-world problems.
+        </p>
+      </div>
     </section>
   </section>
 
@@ -43,13 +59,13 @@
     </ul>
   </section>
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>Skills</h2>
       <div class="projects">
         <div class="project-card">
-          <img src="weather.png" alt="Arduino Display">
-          <h3>Arduino </h3> 
+          <img src="C:\Users\cboll\arduino_usb.png" alt="Arduino Display">
+          <h3>Arduino/MatLab </h3> 
           <p>
-            An Arduino project that uses motion detection to control a servo motor, a light, and a buzzer.
+            An Arduino project that uses motion detection to control a servo motor, a light, and a buzzer and the program used to write the code for this project was MatLab.
           </p>
           <a href="https://github.com/charlieb/weather-now" target="_blank">Arduino Display</a>
         </div>
@@ -81,7 +97,7 @@
           <img src="weather.png" alt="Invetor.png">
           <h3>Inventor Pro </h3> 
           <p>
-            Ive completed various engineering designs  using Inventor Pro.
+            Ive completed various engineering designs using Inventor Pro.
           </p>
           <a href="https://github.com/charlieb/weather-now" target="_blank">Arduino Display</a>
         </div>
@@ -97,28 +113,28 @@
     </section>
 
     <section id="gallery">
-      <h2>Gallery</h2>
+      <h2>Projects</h2>
       <div class="carousel-container">
         <div class="carousel" id="carousel">
           <div class="carousel-slide">
-            <img src="weather.png" alt="Weather App Screenshot">
+            <img src="C:\Users\cboll\OneDrive\Pictures\Exercise 7-1 website BluePrint.png" alt="Inventor Blueprint">
             <div class="carousel-caption">
-              <h3>WeatherNow App</h3>
-              <p>Real-time weather data and forecasts</p>
+              <h3>Inventor Pro</h3>
+              <p>I've completed various engineering designs using Inventor Pro.</p>
             </div>
           </div>
           <div class="carousel-slide">
-            <img src="project2.jpg" alt="Task Manager Screenshot">
+            <img src="C:\Users\cboll\C++,Java,python.webp" alt="Code Editor Screenshot">
             <div class="carousel-caption">
-              <h3>TaskZen Manager</h3>
-              <p>Productivity-focused task management</p>
+              <h3>Python, Java, and C++ Code Editing</h3>
+              <p>I've completed various code editing projects using Python, Java, and C++.</p>
             </div>
           </div>
           <div class="carousel-slide">
-            <img src="project3.jpg" alt="Photo Gallery Screenshot">
+            <img src="C:\Users\cboll\arduino_usb.png" alt="Arduino/MatLab">
             <div class="carousel-caption">
-              <h3>Portfolio Gallery</h3>
-              <p>Minimalist photography showcase</p>
+              <h3>Arduino/MatLab</h3>
+              <p>An Arduino project that uses motion detection to control a servo motor, a light, and a buzzer and the program used to write the code for this project was MatLab.</p>
             </div>
           </div>
         </div>
@@ -134,15 +150,19 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:abk5@njit.edu">abk5@njit.edu</a></p>
-      <p>Github: <a href="https://github.com/abknjit">https://github.com/abknjit</a></p>
-      <p>Or use the contact form below to reach me:</p>
-      <form class="contact-form" action="mailto:abk5@njit.edu" method="POST" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message..." rows="4" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p><strong>Get in touch</strong></p>
+          <p>Email: <a href="mailto:abk5@njit.edu">abk5@njit.edu</a></p>
+          <p>Github: <a href="https://github.com/abknjit" target="_blank">github.com/abknjit</a></p>
+        </div>
+        <form class="contact-form" action="mailto:abk5@njit.edu" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message..." rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
   </main>
 
@@ -190,6 +210,61 @@
 
     // Initialize carousel
     showSlide(0);
+
+    // Nav toggle
+    const nav = document.querySelector('nav.site-nav');
+    const navToggleBtn = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (nav && navToggleBtn && navLinks) {
+      navToggleBtn.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        navToggleBtn.setAttribute('aria-expanded', String(isOpen));
+      });
+      // Close menu after clicking a link (on mobile)
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          // set active immediately on click
+          const id = (link.getAttribute('href') || '').replace('#','');
+          if (id) setActiveLink(id);
+          if (nav.classList.contains('open')) {
+            nav.classList.remove('open');
+            navToggleBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+
+    // Active link handling for current section
+    const sectionIds = ['about','skills','projects','gallery','contact'];
+    const sectionElements = sectionIds
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+    const linkMap = new Map(
+      sectionIds.map(id => [id, document.querySelector(`.nav-links a[href="#${id}"]`)] )
+    );
+
+    function setActiveLink(activeId) {
+      linkMap.forEach((anchor, id) => {
+        if (anchor) anchor.classList.toggle('active', id === activeId);
+      });
+    }
+
+    // Observe sections to update active link on scroll
+    if ('IntersectionObserver' in window && sectionElements.length) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        });
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.25 });
+
+      sectionElements.forEach((el) => observer.observe(el));
+    } else if (location.hash) {
+      // Fallback: set active from hash on load
+      setActiveLink(location.hash.replace('#',''));
+    }
   </script>
 </body>
 </html>
