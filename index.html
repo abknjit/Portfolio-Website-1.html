@@ -67,7 +67,6 @@
           <p>
             An Arduino project that uses motion detection to control a servo motor, a light, and a buzzer and the program used to write the code for this project was MatLab.
           </p>
-          <a href="https://github.com/charlieb/weather-now" target="_blank">Arduino Display</a>
         </div>
         <div class="project-card">
           <img src="images/python logo.png" alt="Code Editor Screenshot">
@@ -75,7 +74,6 @@
           <p>
             I've completed various code editing projects using Python, Java, and C++.
           </p>
-          <a href="https://charlieb.com/taskzen" target="_blank">Live Demo</a>
         </div>
         <div class="project-card">
           <img src="images/Autodesk-Inventor website.jpeg" alt="Inventor Pro">
@@ -83,7 +81,6 @@
           <p>
             Ive completed various engineering designs using Autodesk Inventor Professional.
           </p>
-          <a href="https://github.com/charlieb/weather-now" target="_blank">Arduino Display</a>
         </div>
         <div class="project-card">
           <img src="images/davinci.jpg" alt="DaVinci Resolve">
@@ -219,6 +216,15 @@
     function currentSlide(index) {
       currentSlideIndex = index - 1;
       showSlide(currentSlideIndex);
+    }
+
+    function goToGallery(galleryId, slideIndex) {
+      const gallerySection = document.getElementById('gallery');
+      if (gallerySection) {
+        gallerySection.scrollIntoView({ behavior: 'smooth' });
+      }
+      currentSlide(slideIndex);
+      openGallery(galleryId);
     }
 
     // Auto-advance carousel every 5 seconds

@@ -455,7 +455,8 @@ section h2::after {
   margin-bottom: 1rem;
   line-height: 1.6;
 }
-.project-card a {
+.project-card a,
+.project-card button.project-action {
   margin-top: auto;
   padding: 0.85rem 1.8rem;
   border-radius: 8px;
@@ -472,9 +473,16 @@ section h2::after {
   position: relative;
   overflow: hidden;
   letter-spacing: 0.5px;
+  cursor: pointer;
+  background-color: transparent;
 }
 
-.project-card a::before {
+.project-card button.project-action {
+  font-family: inherit;
+}
+
+.project-card a::before,
+.project-card button.project-action::before {
   content: '';
   position: absolute;
   top: 0;
@@ -485,11 +493,13 @@ section h2::after {
   transition: left 0.5s ease;
 }
 
-.project-card a:hover::before {
+.project-card a:hover::before,
+.project-card button.project-action:hover::before {
   left: 100%;
 }
 
-.project-card a:hover {
+.project-card a:hover,
+.project-card button.project-action:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), inset 0 0 20px rgba(0, 255, 255, 0.1);
   background: rgba(0, 255, 255, 0.1);
