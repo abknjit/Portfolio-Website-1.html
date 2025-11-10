@@ -62,7 +62,7 @@
       <h2>Skills</h2>
       <div class="projects">
         <div class="project-card">
-          <img src="C:\Users\cboll\arduino_usb.png" alt="Arduino Display">
+          <img src="C:\Users\cboll\do-matlab-arduino-electronics-simulink-and-iot-projects.jpg" alt="Arduino Display">
           <h3>Arduino/MatLab </h3> 
           <p>
             An Arduino project that uses motion detection to control a servo motor, a light, and a buzzer and the program used to write the code for this project was MatLab.
@@ -70,7 +70,7 @@
           <a href="https://github.com/charlieb/weather-now" target="_blank">Arduino Display</a>
         </div>
         <div class="project-card">
-          <img src="C:\Users\cboll\C++,Java,python.webp" alt="Code Editor Screenshot">
+          <img src="C:\Users\cboll\python logo.png" alt="Code Editor Screenshot">
           <h3>Python, Java, and C++ Code Editing </h3>
           <p>
             I've completed various code editing projects using Python, Java, and C++.
@@ -78,23 +78,7 @@
           <a href="https://charlieb.com/taskzen" target="_blank">Live Demo</a>
         </div>
         <div class="project-card">
-          <img src="C:\Users\cboll\davinci.jpg" alt="DaVinci Resolve">
-          <h3>Video Editing with DaVinci Resolve </h3> 
-          <p>
-            I've completed various video editing projects using DaVinci Resolve.
-          </p>
-          <a href="https://github.com/charlieb/weather-now" target="_blank">Arduino Display</a>
-        </div>
-        <div class="project-card">
-          <img src="project3.jpg" alt="Coming Soon">
-          <h3>More Coming Soon!</h3>
-          <p>
-            As I accomplish more projects, I will add them here.
-          </p>
-          <a href="https://github.com/charlieb/portfolio-gallery" target="_blank">GitHub Repo</a>
-        </div>
-        <div class="project-card">
-          <img src="weather.png" alt="Invetor.png">
+          <img src="C:\Users\cboll\Autodesk-Inventor website.jpeg" alt="Invetor.png">
           <h3>Inventor Pro </h3> 
           <p>
             Ive completed various engineering designs using Inventor Pro.
@@ -102,12 +86,18 @@
           <a href="https://github.com/charlieb/weather-now" target="_blank">Arduino Display</a>
         </div>
         <div class="project-card">
-          <img src="project2.jpg" alt="Code Editor Screenshot">
-          <h3>Python, Java, and C++ Code Editing </h3>
+          <img src="C:\Users\cboll\davinci.jpg" alt="DaVinci Resolve">
+          <h3>Video Editing with DaVinci Resolve </h3> 
           <p>
-            I've completed various code editing projects using Python, Java, and C++.
+            I've completed various video editing projects using DaVinci Resolve.
           </p>
-          <a href="https://charlieb.com/taskzen" target="_blank">Live Demo</a>
+        </div>
+        <div class="project-card">
+          <img src="C:\Users\cboll\OneDrive\Pictures\coming soon w.jpg" alt="Coming Soon">
+          <h3>More Coming Soon!</h3>
+          <p>
+            As I accomplish more projects, I will add them here.
+          </p>
         </div>
       </div>
     </section>
@@ -217,20 +207,22 @@
     const navLinks = document.getElementById('nav-links');
 
     if (nav && navToggleBtn && navLinks) {
+      // Initialize: menu starts closed (only active link visible)
+      nav.classList.add('closed');
+      
       navToggleBtn.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('open');
-        navToggleBtn.setAttribute('aria-expanded', String(isOpen));
+        const isClosed = nav.classList.toggle('closed');
+        navToggleBtn.setAttribute('aria-expanded', String(!isClosed));
       });
-      // Close menu after clicking a link (on mobile)
+      // Close menu after clicking a link
       navLinks.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
           // set active immediately on click
           const id = (link.getAttribute('href') || '').replace('#','');
           if (id) setActiveLink(id);
-          if (nav.classList.contains('open')) {
-            nav.classList.remove('open');
-            navToggleBtn.setAttribute('aria-expanded', 'false');
-          }
+          // Close menu after selecting a link
+          nav.classList.add('closed');
+          navToggleBtn.setAttribute('aria-expanded', 'false');
         });
       });
     }
@@ -246,9 +238,15 @@
 
     function setActiveLink(activeId) {
       linkMap.forEach((anchor, id) => {
-        if (anchor) anchor.classList.toggle('active', id === activeId);
+        if (anchor) {
+          anchor.classList.toggle('active', id === activeId);
+        }
       });
     }
+
+    // Set initial active link (default to "about" if no hash)
+    const initialSection = location.hash ? location.hash.replace('#','') : 'about';
+    setActiveLink(initialSection);
 
     // Observe sections to update active link on scroll
     if ('IntersectionObserver' in window && sectionElements.length) {
@@ -261,9 +259,6 @@
       }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.25 });
 
       sectionElements.forEach((el) => observer.observe(el));
-    } else if (location.hash) {
-      // Fallback: set active from hash on load
-      setActiveLink(location.hash.replace('#',''));
     }
   </script>
 </body>
